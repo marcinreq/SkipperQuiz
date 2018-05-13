@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Users.Service\Users.Service.csproj" />
+    <ProjectReference Include="..\Users.Repository\Users.Repository.csproj" />
   </ItemGroup>
 
 </Project>

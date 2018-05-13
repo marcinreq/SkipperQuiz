@@ -13,6 +13,7 @@ namespace SkipperWebApi.Controllers
         private IUsersService _userService;
         private IMapper _mapper;
 
+
         public UsersController(IUsersService userService, IMapper mapper)
         {
             _userService = userService;
