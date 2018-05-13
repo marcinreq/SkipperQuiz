@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Users.Domain;
+using Users.Repository;
+using Users.Service;
 
 namespace SkipperWebApi
 {
@@ -24,6 +22,9 @@ namespace SkipperWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddAutoMapper();
+            services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IUsersRepository, UsersRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
